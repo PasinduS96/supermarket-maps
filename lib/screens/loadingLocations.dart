@@ -37,7 +37,7 @@ class _LoadLocationsScreenState extends State<LoadLocationsScreen> {
                       padding: EdgeInsets.only(top: 20.0),
                     ),
                     Text(
-                      'Content is loading!',
+                      'Please Wait!',
                       softWrap: true,
                       textAlign: TextAlign.center,
                       style: TextStyle(
