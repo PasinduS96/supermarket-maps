@@ -228,7 +228,7 @@ class _MyMapState extends State<MyMap> {
     return FloatingActionButton(
       onPressed: function,
       materialTapTargetSize: MaterialTapTargetSize.padded,
-      backgroundColor: Colors.amber[600],
+      backgroundColor: Colors.green[700],
       child: Icon(icon, size: 36.0),
     );
   }

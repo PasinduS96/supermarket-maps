@@ -5,6 +5,7 @@ import 'package:login/screens/map/map_cmb.dart';
 import 'package:login/screens/login/resetPassword.dart';
 import 'package:login/screens/map/supermarket_list.dart';
 import 'package:login/screens/login/signup.dart';
+import 'package:login/screens/splashScreen.dart';
 
 void main() => runApp(new MyApp());
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         '/resetPass': (BuildContext context) => new ResetPassword(),
         '/favlist': (BuildContext context) => new FavouriteList(),
       },
-      home: new LoginPage(),
+      home: new SplashScreen(),
     );
   }
 }

@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:login/screens/map/map_cmb.dart';
 import 'package:login/services/crudService.dart';
+import 'package:login/screens/loadingLocations.dart';
 
 class FavouriteList extends StatefulWidget {
   @override
@@ -130,7 +131,7 @@ class FavouriteListState extends State<FavouriteList> {
               fontWeight: FontWeight.w700),
         ),
       ),
-      body: _buildListView(context),
+      body: locations != null ? _buildListView(context) : LoadLocationsScreen(),
     );
   }
 

@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:login/screens/map/map_cmb.dart';
 import 'package:login/services/crudService.dart';
 import 'package:progress_dialog/progress_dialog.dart';
+import 'package:login/screens/loadingLocations.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 
 class SuperMarketLists extends StatefulWidget {
   @override
@@ -53,6 +55,7 @@ class SuperMarketListState extends State<SuperMarketLists> {
             onPressed: () {
               FirebaseAuth.instance.signOut().then((value) {
                 Navigator.of(context).pushReplacementNamed('/login');
+                showToast('User Logged Out');
               }).catchError((e) {
                 print(e);
               });
@@ -61,7 +64,7 @@ class SuperMarketListState extends State<SuperMarketLists> {
           ),
         ],
       ),
-      body: _buildListView(context),
+      body: locations != null ? _buildListView(context) : LoadLocationsScreen(),
     );
   }
 
@@ -168,13 +171,14 @@ class SuperMarketListState extends State<SuperMarketLists> {
     );
   }
 
-  // void _logoutFromHome() {
-  //   FirebaseAuth.instance.signOut().then((value) {
-  //     Navigator.of(context).pushReplacementNamed('/login');
-  //   }).catchError((e) {
-  //     print(e);
-  //   });
-  //   return null;
-  // }
-
+  void showToast(String message) {
+    Fluttertoast.showToast(
+        msg: message,
+        toastLength: Toast.LENGTH_SHORT,
+        gravity: ToastGravity.BOTTOM,
+        timeInSecForIosWeb: 1,
+        backgroundColor: Colors.green[700],
+        textColor: Colors.white,
+        fontSize: 16.0);
+  }
 }

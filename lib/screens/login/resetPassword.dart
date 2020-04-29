@@ -174,9 +174,9 @@ class _ResetPasswordState extends State<ResetPassword> {
     Fluttertoast.showToast(
         msg: message,
         toastLength: Toast.LENGTH_SHORT,
-        gravity: ToastGravity.TOP,
+        gravity: ToastGravity.BOTTOM,
         timeInSecForIosWeb: 1,
-        backgroundColor: Colors.amber[600],
+        backgroundColor: Colors.green[700],
         textColor: Colors.white,
         fontSize: 16.0);
   }
